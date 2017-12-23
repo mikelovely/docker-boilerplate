@@ -1,5 +1,5 @@
 <?php
 
-echo "Code";
+echo "Src";
 
 echo phpinfo();

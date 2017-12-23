@@ -1,5 +1,5 @@
 <?php
 
-echo "Code";
+echo "Public";
 
 echo phpinfo();
