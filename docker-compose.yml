@@ -22,7 +22,7 @@ services:
             - "MYSQL_ROOT_HOST=%"
         ports:
             - "33063:3306"
-    divido-merchant-api-redis:
+    redis:
         image: redis:alpine
         ports:
             - "63793:6379"
