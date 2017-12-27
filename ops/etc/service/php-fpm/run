@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+exec /usr/sbin/php-fpm7 -F -c /etc/php7 -y /etc/php7/php-fpm.conf
