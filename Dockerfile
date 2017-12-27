@@ -25,8 +25,12 @@ RUN chown nginx:nginx /opt/app
 RUN mkdir -p /run/php
 RUN chown nginx:nginx /run/php
 
-COPY ./src/index.php /opt/app/index.php
+COPY ./ops/etc/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY ./ops/etc/nginx/site.conf /etc/nginx/conf.d/default.conf
+COPY ./ops/etc/php-fpm-www-pool.conf /etc/php7/php-fpm.d/www.conf
+COPY ./ops/etc/service/nginx/run /etc/service/nginx/run
+COPY ./ops/etc/service/php-fpm/run /etc/service/php-fpm/run
 
-COPY ./ops/docker/webserver/nginx-site.conf /etc/nginx/conf.d/default.conf
-COPY ./ops/docker/php/php.ini /etc/php7/php.ini
-COPY ./ /opt/app/
+COPY ./ops/bin/runsvdir-start /usr/local/sbin/runsvdir-start
+
+ENTRYPOINT ["/usr/local/sbin/runsvdir-start"]
