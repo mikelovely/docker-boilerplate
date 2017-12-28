@@ -1,0 +1,17 @@
+version: '3'
+services:
+
+  docker-boilerplate-db:
+    container_name: docker-boilerplate-db
+    image: mysql/mysql-server:5.7
+    environment:
+      - "MYSQL_DATABASE=docker_boilerplate"
+      - "MYSQL_ROOT_PASSWORD=password"
+      - "MYSQL_ROOT_HOST=%"
+    ports:
+      - "33063:3306"
+
+networks:
+  default:
+    external:
+      name: environment_docker-boilerplate
