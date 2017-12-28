@@ -1,0 +1,13 @@
+version: '3'
+services:
+
+  docker-boilerplate-redis:
+    container_name: docker-boilerplate-redis
+    image: redis:3.2.10-alpine
+    ports:
+      - "63793:6379"
+
+networks:
+  default:
+    external:
+      name: environment_docker-boilerplate

@@ -1,0 +1,20 @@
+version: '3'
+services:
+
+  docker-boilerplate-server:
+    container_name: docker-boilerplate-server
+    build: ./server
+    volumes:
+      - ../../../:/opt/app
+    ports:
+      - "8021:80"
+    external_links:
+      - "docker-boilerplate-db"
+      - "docker-boilerplate-redis"
+    environment:
+      APP_ENV: dev
+
+networks:
+  default:
+    external:
+      name: environment_docker-boilerplate
