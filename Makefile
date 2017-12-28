@@ -11,8 +11,8 @@ help: ## Prints help for targets with comments
 
 up:
 	docker network create environment_docker-boilerplate || true
-	# docker-compose -f ./ops/development/docker/db.yml -p db up -d
-	# docker-compose -f ./ops/development/docker/redis.yml -p redis up -d
+	docker-compose -f ./ops/development/docker/db.yml -p db up -d
+	docker-compose -f ./ops/development/docker/redis.yml -p redis up -d
 	docker-compose -f ./ops/development/docker/server.yml -p server up -d --build
 
 down:

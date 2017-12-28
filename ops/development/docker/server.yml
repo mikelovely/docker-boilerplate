@@ -8,6 +8,9 @@ services:
       - ../../../:/opt/app
     ports:
       - "8021:80"
+    external_links:
+      - "docker-boilerplate-db"
+      - "docker-boilerplate-redis"
     environment:
       APP_ENV: dev
 
