@@ -33,3 +33,5 @@ COPY ./php-fpm/run /etc/service/php-fpm/run
 
 COPY ./config/runsvdir-start /usr/local/sbin/runsvdir-start
 ENTRYPOINT ["/usr/local/sbin/runsvdir-start"]
+
+ADD xdebug.ini /etc/php7/conf.d/xdebug.ini
